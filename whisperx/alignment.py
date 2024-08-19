@@ -248,7 +248,7 @@ def align(
 
         duration = t2 -t1
         ratio = duration * waveform_segment.size(0) / (trellis.size(0) - 1)
-
+        del waveform_segment
         # assign timestamps to aligned characters
         char_segments_arr = []
         word_idx = 0
