@@ -33,6 +33,8 @@ class DiarizationPipeline:
         diarize_df = pd.DataFrame(segments.itertracks(yield_label=True), columns=['segment', 'label', 'speaker'])
         diarize_df['start'] = diarize_df['segment'].apply(lambda x: x.start)
         diarize_df['end'] = diarize_df['segment'].apply(lambda x: x.end)
+        del audio
+        del audio_data
         return diarize_df
 
 
